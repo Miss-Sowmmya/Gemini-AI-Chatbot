@@ -1,0 +1,123 @@
+.message-input-container {
+  padding: 1rem 1.5rem;
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--border-color);
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-end;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 12px;
+  padding: 0.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-wrapper:focus-within {
+  border-color: var(--input-focus-border);
+  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+
+.message-textarea {
+  flex: 1;
+  border: none;
+  background: none;
+  padding: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  max-height: 200px;
+  resize: none;
+  color: var(--text-primary);
+  font-family: inherit;
+}
+
+.message-textarea:focus {
+  outline: none;
+}
+
+.message-textarea::placeholder {
+  color: var(--input-placeholder);
+}
+
+.message-textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.input-actions {
+  display: flex;
+  align-items: flex-end;
+}
+
+.send-btn {
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+  font-size: 1.2rem;
+}
+
+.send-btn:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+
+.send-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.send-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.send-btn.stop {
+  background: #dc3545;
+}
+
+.send-btn.stop:hover {
+  background: #c82333;
+}
+
+.input-footer {
+  margin-top: 0.5rem;
+  padding: 0 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.shortcut-hint {
+  margin-left: 1rem;
+}
+
+.shortcut-hint:first-child {
+  margin-left: 0;
+}
+
+@media (max-width: 768px) {
+  .message-input-container {
+    padding: 1rem;
+  }
+  
+  .shortcut-hint {
+    display: none;
+  }
+  
+  .hint {
+    text-align: center;
+    width: 100%;
+  }
+}
